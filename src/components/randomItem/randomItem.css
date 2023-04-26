@@ -60,7 +60,7 @@
 .numInblock-anim3 {
   position: relative;
   top: -210px;
-  animation: move-down 400ms infinite linear;
+  animation: move-down 300ms infinite linear;
 }
 
 @keyframes moving {

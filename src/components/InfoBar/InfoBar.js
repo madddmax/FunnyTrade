@@ -7,11 +7,6 @@ import checkPrize from '../../tools/slots';
 import RandomItem from '../randomItem/RandomItem';
 import './infoBar.css'
 
-// const audioPush = new Audio(process.env.PUBLIC_URL + '/sounds/hand.mp3');
-// const audioRound = new Audio(process.env.PUBLIC_URL + '/sounds/tick.mp3');
-// const audioBid = new Audio(process.env.PUBLIC_URL + '/sounds/bid.mp3');
-// const audioWin01 = new Audio(process.env.PUBLIC_URL + '/sounds/win01.mp3');
-
 const InfoBar = observer(() => {
 
 
@@ -19,13 +14,24 @@ const InfoBar = observer(() => {
     const [value, setValue] = useState(0);
     const [myColor, setMyColor] = useState('white')
 
-    useEffect(() => {
-        if (user.getScores().length === 5) {
+    const data = [
+        {
+            'Arr': ['TQBR:ALRS', 'TQBR:GAZP', 'TQBR:GMKN', 'TQBR:LKOH', 'TQBR:VTBR', 'TQTF:LQDT'],
+            'Time': 900
+        },
+        {
+            'Arr': ['1', '2', '3', '4', '5', '6', '7', '8', '9', '1000'],
+            'Time': 1050
+        },
+        {
+            'Arr': ['Buy', 'Sell'],
+            'Time': 1100
+        }
+    ]
 
-            const countItems = user.getScores().reduce((acc, item) => {
-                acc[item] = acc[item] ? acc[item] + 1 : 1; // если элемент уже был, то прибавляем 1, если нет - устанавливаем 1
-                return acc;
-            }, {});
+    useEffect(() => {
+        if (user.getScores().length === data.length) {
+
 
             // обрабатываем ключи объекта
             // const result = Object.keys(countItems).filter((item) => countItems[item] > 1);
@@ -39,7 +45,8 @@ const InfoBar = observer(() => {
             // }
 
             if (user.getRounds() !== 0) {
-                checkPrize(countItems, user)
+                //checkPrize(countItems, user)
+                //user.setClearScores()
             }
 
 
@@ -155,7 +162,6 @@ const InfoBar = observer(() => {
 
     const stopAuto = () => user.setAutoRounds(false)
     const bidSignal = () => alert('Ставка 0. Сделайте ставку!!!')
-    const startTime = [1000, 1050, 1100, 1150, 1200]
 
     return (
         <div className='info-bar'>
@@ -179,8 +185,8 @@ const InfoBar = observer(() => {
             </div>
 
             <div className='divApp'>
-                {startTime.map((item, index) => {
-                    return <RandomItem key={index} timer={item} speed={2} color={myColor} ></RandomItem>
+                {data.map((item, index) => {
+                    return <RandomItem key={index} timer={item.Time} arr={item.Arr} speed={2} color={myColor} ></RandomItem>
                 })}
 
             </div>

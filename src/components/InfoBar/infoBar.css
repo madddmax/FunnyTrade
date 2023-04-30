@@ -55,12 +55,10 @@ input {
 }
 
 .info-bar > .btn button {
-  padding: 20px;
-  margin: 15px;
+  padding: 25px;
+  margin: 20px;
 }
-.ml-mr-5 {
-  margin: 0 5px;
-}
+
 .info-msg p {
   margin: 0;
 }

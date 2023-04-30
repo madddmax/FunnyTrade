@@ -1,6 +1,7 @@
 import { makeAutoObservable, } from 'mobx'
 
 export default class InfoBarStore {
+
     audioPush = new Audio(process.env.PUBLIC_URL + '/sounds/hand.mp3');
     audioRound = new Audio(process.env.PUBLIC_URL + '/sounds/tick.mp3');
     audioBid = new Audio(process.env.PUBLIC_URL + '/sounds/bid.mp3');
@@ -9,72 +10,51 @@ export default class InfoBarStore {
     audioWin01 = new Audio(process.env.PUBLIC_URL + '/sounds/win01.mp3');
     audioWin02 = new Audio(process.env.PUBLIC_URL + '/sounds/win02.mp3');
 
-
     constructor() {
-
+        this._clientId = ''
+        this._apiKey = ''
         this._start = false
-        this.turn = 'false'
         this._scores = []
-        this._rounds = 0
-        this._money = 0 // ставка игрока = 0
-        this._winMoney = 0 // выйгрыш текущего раунда - одна прокрутка
-        this._winArr = [] // массив ВСЕХ выйгрышных номеров - отражает внизу страницы
-        this._winAllMoney = 0 // общ выйгрыш за раунды - сделал ставку и крутишь
-        this._autoRounds = false
         this._winMessadge = ['Крути!', 'Повезет в следующий раз!']
         this._sound = true
 
         makeAutoObservable(this)
-
-        // when(
-        //     () => this._scores.length === 5,
-        //     () => {
-        //         console.log(toJS(this._scores))
-        //     }
-        // )
     }
 
+    setClientId(start) {
+        this._clientId = start
+    }
+
+    getClientId() {
+        return this._clientId
+    }
+
+    setApiKey(start) {
+        this._apiKey = start
+    }
+
+    getApiKey() {
+        return this._apiKey
+    }
 
     setStart(start) {
         this._start = start
     }
 
+    getStart() {
+        return this._start
+    }
+
     setScores(num) {
         this._scores.push(num)
-
     }
 
     setClearScores() {
         this._scores = []
     }
 
-    setRounds(rounds) {
-        this._rounds = rounds
-    }
-
-    setMoney(money) {
-        this._money = Number(money)
-    }
-
-
-    setWinMoney(money) {
-        this._winMoney = Number(money)
-    }
-
-    setWinAllMoney(money) {
-        this._winAllMoney = Number(money)
-    }
-
-    setWinArr(obj) {
-        this._winArr.unshift(obj)
-    }
-
-    setDelWinArr() {
-        this._winArr = []
-    }
-
-    setAutoRounds(bool) {
-        this._autoRounds = bool
+    getScores() {
+        return this._scores
     }
 
     setWinMessage(text) {
@@ -85,51 +65,15 @@ export default class InfoBarStore {
         this._winMessadge = []
     }
 
+    getWinMessage() {
+        return this._winMessadge
+    }
+
     setSound(value) {
         this._sound = value
-    }
-
-
-    getStart() {
-        return this._start
-    }
-
-    getAutoRounds() {
-        return this._autoRounds
-    }
-
-    getScores() {
-        return this._scores
-    }
-
-    getRounds() {
-        return this._rounds
-    }
-
-    getMoney() {
-        return this._money
-    }
-
-    getWinMoney() {
-        return this._winMoney
-    }
-
-    getWinAllMoney() {
-        return this._winAllMoney
-    }
-
-    getWinArr() {
-        // console.log(this._winArr);
-        return this._winArr
-    }
-
-    getWinMessage() {
-        // console.log(this._winMessadge);
-        return this._winMessadge
     }
 
     get sound() {
         return this._sound
     }
-
 }

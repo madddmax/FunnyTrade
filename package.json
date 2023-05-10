@@ -1,7 +1,8 @@
 {
   "name": "zero",
   "version": "0.1.0",
-  "homepage": "https://yuracom.github.io/220721robots/",
+  "homepage": "https://yuracom.github.io/funnytrade/",
+  "proxy": "https://trade-api.finam.ru",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

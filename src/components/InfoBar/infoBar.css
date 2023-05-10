@@ -63,10 +63,14 @@ input {
   margin: 0;
 }
 
-.winArrS {
-  display: flex;
-  justify-content: space-around;
+.positions-table {
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 15px;
+}
+
+th, td {
+  padding: 5px;
   border: 1px solid white;
 }
 

@@ -9,7 +9,7 @@ const RandomItem = observer((props) => {
     const arrNs = shuffle(props.arr)
     const [currentN, setCurrentN] = useState(arrNs[getRandomNum(0, arrNs.length - 1)])
     const [startAnim, setStartAnim] = useState(user.getStart())
-    const [currentAnim, setCurrentAnim] = useState('numInblockStart ')
+    const [currentAnim, setCurrentAnim] = useState('numInblockStart')
 
     function rotationSlot(speed) {
         
@@ -52,8 +52,6 @@ const RandomItem = observer((props) => {
     return (
         <div className='num-block' style={{ borderColor: props.color }}  >
             <span className={startAnim ? currentAnim : 'numInblockStart'}>{currentN.split(':').map(str => <p>{str}</p>)}</span>
-            {/* <img id={'win' + currentN} className={startAnim ? currentAnim : 'numInblockStart'}
-                src={process.env.PUBLIC_URL + '/images/' + currentN + '.png'} alt="currentN" /> */}
         </div>
     )
 })

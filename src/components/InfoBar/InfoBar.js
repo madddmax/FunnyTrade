@@ -102,7 +102,6 @@ const InfoBar = observer(() => {
             user.audioPush.play();
         }
 
-        RefreshPositions(apiKey, clientId, setPositions);
         user.setStart(true)
     }
 

@@ -1,4 +1,6 @@
-https://yuracom.github.io/220721robots/
+# Fix config
+[config.json](https://github.com/madddmax/FunnyTrade/blob/main/src/config.json) to change available securities "Board:Code", available positions and operations - only buy ["Buy"].
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

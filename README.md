@@ -1,5 +1,5 @@
 # Fix config
-[config.json](https://github.com/madddmax/FunnyTrade/blob/main/src/config.json) to change available securities "Board:Code", available positions and operations - only buy ["Buy"].
+[config.json](https://github.com/madddmax/FunnyTrade/blob/main/src/config.json) to change available securities "Board:Code", available quantity and operations - only buy ["Buy"].
 
 # Getting Started with Create React App
 

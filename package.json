@@ -1,7 +1,7 @@
 {
   "name": "zero",
   "version": "0.1.0",
-  "homepage": "https://yuracom.github.io/funnytrade/",
+  "homepage": "http://wealth-wizards.site",
   "proxy": "https://trade-api.finam.ru",
   "private": true,
   "dependencies": {

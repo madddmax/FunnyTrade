@@ -1,5 +1,7 @@
+[http://wealth-wizards.site:3000](http://wealth-wizards.site:3000) - configured only "Buy"
+
 # Fix config
-[config.json](https://github.com/madddmax/FunnyTrade/blob/main/src/config.json) to change available securities "Board:Code", available quantity and operations - only buy ["Buy"].
+[config.json](https://github.com/madddmax/FunnyTrade/blob/main/src/config.json) to change available securities "Board:Code", available quantity and operations - only buy ["Buy"] or ["Buy", "Sell"] for buy and sell.
 
 # Getting Started with Create React App
 

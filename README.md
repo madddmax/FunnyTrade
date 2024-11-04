@@ -1,9 +1,14 @@
-[http://wealth-wizards.site:3000](http://wealth-wizards.site:3000) - configured only "Buy"
+# FunnyTrade
 
-# Fix config
+Implementation of a one-armed bandit using [Finam Trade API](https://finamweb.github.io/trade-api-docs/) to make a decision to buy or sell securities.
+
+https://github.com/user-attachments/assets/bf4039ae-282c-4651-b4cf-483c2a988198
+
+## Fix config
+
 [config.json](https://github.com/madddmax/FunnyTrade/blob/main/src/config.json) to change available securities "Board:Code", available quantity and operations - only buy ["Buy"] or ["Buy", "Sell"] for buy and sell.
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
